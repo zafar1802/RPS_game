@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+
+
+
+    <style></style>
+
+</head>
+
+
+
+<body>
+
+    <div id="result"></div>
+    <div id="comp-choice"></div>
+    <div id="user-choice"></div>
+    <div id="wins"></div>
+    <div id="losses"></div>
+
+  <script>
+  
+  let letters = "rps"
+
+  let wins = 0
+  let losses = 0
+
+  document.onkeyup = function (e) {
+
+let letter = e.key;
+
+
+let index = Math.floor(Math.random() * letters.length)
+let comp_guess = letters[index];
+
+document.querySelector('#comp-choice').innerHTML = comp_guess
+document.querySelector('#user-choice').innerHTML = letter
+
+console.log(comp_guess)
+if (letter === "r" && comp_guess === "p") {
+
+    document.querySelector('#result').innerHTML = 'Loser!';
+    losses++;
+
+} else if (letter === "r" && comp_guess === "s") {
+
+    document.querySelector('#result').innerHTML = 'Winner!';
+    wins++;
+
+} else if (letter === "p" && comp_guess === "r") {
+
+document.querySelector('#result').innerHTML = 'Winner!';
+  wins++;
+
+} else if (letter === "p" && comp_guess === "s") {
+
+document.querySelector('#result').innerHTML = 'Loser!';
+losses++;
+
+} else if (letter === "s" && comp_guess === "p") {
+
+document.querySelector('#result').innerHTML = 'Winner!';
+wins++;
+
+} else if (letter === "s" && comp_guess === "r") {
+
+document.querySelector('#result').innerHTML = 'Loser!';
+losses++;
+
+} else if (letter === "s" && comp_guess === "s") {
+
+document.querySelector('#result').innerHTML = 'Draw!';
+
+} else if (letter === "r" && comp_guess === "r") {
+
+document.querySelector('#result').innerHTML = 'Draw!';
+
+} else if (letter === "p" && comp_guess === "p") {
+
+document.querySelector('#result').innerHTML = 'Draw!';
+
+}
+
+
+document.querySelector('#wins').innerHTML = wins;
+
+document.querySelector('#losses').innerHTML = losses;
+
+}
+</script>
+  
+
+  
+
+</body>
+
+</html>
+
